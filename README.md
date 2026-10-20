@@ -1,4 +1,4 @@
-# Xiaomi Notes for Xiaomi Pad 8 Pro (piano)
+# Xiaomi Notes for the Xiaomi Pad 8 Pro (piano)
 
 Stock Xiaomi Notes 3.2.2.8 from HyperOS 4 China, made to work without a
 Xiaomi account. Android 17.
