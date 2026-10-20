@@ -11,4 +11,5 @@ _piano_notes_ok := $(shell python3 vendor/xiaomi/piano-xiaomi-notes/stage-origin
 ifneq ($(_piano_notes_ok),verified)
 $(error Xiaomi Notes staged APK failed manifest/integrity verification)
 endif
+PRODUCT_SOONG_NAMESPACES += vendor/xiaomi/piano-xiaomi-notes
 PRODUCT_PACKAGES += MIUINotes
