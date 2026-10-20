@@ -3,7 +3,7 @@
 Stock Xiaomi Notes 3.2.2.8 from HyperOS 4 China, made to work without a
 Xiaomi account. Android 17.
 
-Goes in `vendor/xiaomi/piano-notes`. `notes.mk` rebuilds the APK from the
+Goes in `vendor/xiaomi/piano-xiaomi-notes`. `notes.mk` rebuilds the APK from the
 stock pieces in `parts/` the first time the product is configured.
 
 ## What changes from stock

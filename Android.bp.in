@@ -13,13 +13,13 @@ java_library {
 }
 
 python_binary_host {
-    name: "piano-notes-append-compat",
+    name: "piano-xiaomi-notes-append-compat",
     main: "append-compat.py",
     srcs: ["append-compat.py", "offline_dex.py", "offline_manifest.py", "manifest.py", "strip_micloud.py"],
 }
 
 java_binary_host {
-    name: "piano-notes-offline-dex",
+    name: "piano-xiaomi-notes-offline-dex",
     srcs: ["OfflineDex.java", "ReplayableDexPool.java"],
     main_class: "OfflineDex",
     static_libs: ["smali-dexlib2"],
@@ -29,16 +29,16 @@ java_binary_host {
 // PianoNotesCompat's android_common Java output. Keep the APK appender in the
 // Android Java variant so $(location :PianoNotesCompat) is its DEX JAR.
 java_genrule {
-    name: "piano-notes-compatible-apk",
+    name: "piano-xiaomi-notes-compatible-apk",
     srcs: ["prebuilt/MIUINotes.apk", ":PianoNotesCompat", "compat/device_features/piano.xml"],
-    tools: ["piano-notes-append-compat", "piano-notes-offline-dex"],
+    tools: ["piano-xiaomi-notes-append-compat", "piano-xiaomi-notes-offline-dex"],
     out: ["MIUINotes-compatible.apk"],
-    cmd: "$(location piano-notes-append-compat) $(location prebuilt/MIUINotes.apk) $(location :PianoNotesCompat) $(out) $(location compat/device_features/piano.xml) $(location piano-notes-offline-dex)",
+    cmd: "$(location piano-xiaomi-notes-append-compat) $(location prebuilt/MIUINotes.apk) $(location :PianoNotesCompat) $(out) $(location compat/device_features/piano.xml) $(location piano-xiaomi-notes-offline-dex)",
 }
 
 android_app_import {
     name: "MIUINotes",
-    apk: ":piano-notes-compatible-apk",
+    apk: ":piano-xiaomi-notes-compatible-apk",
     // Default ROM app key: closed-source Notes must not get platform permissions.
     default_dev_cert: true,
     product_specific: true,

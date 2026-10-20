@@ -92,7 +92,7 @@ def main():
         return
     with ExitStack() as stack:
         if args.from_parts:
-            tempdir = Path(stack.enter_context(tempfile.TemporaryDirectory(prefix="piano-notes-parts-")))
+            tempdir = Path(stack.enter_context(tempfile.TemporaryDirectory(prefix="piano-xiaomi-notes-parts-")))
             original = tempdir / APK
             parts = json.loads((ROOT / "parts.json").read_text())
             if set(parts) != {APK}:

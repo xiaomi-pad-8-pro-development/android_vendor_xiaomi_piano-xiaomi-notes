@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 root = Path(__file__).resolve().parent
-with tempfile.TemporaryDirectory(prefix="piano-notes-selfcheck-") as directory:
+with tempfile.TemporaryDirectory(prefix="piano-xiaomi-notes-selfcheck-") as directory:
     target = Path(directory)
     for name in ("stage-originals.py", "manifest.py", "strip_micloud.py", "Android.bp.in", "parts.json"):
         shutil.copyfile(root / name, target / name)
