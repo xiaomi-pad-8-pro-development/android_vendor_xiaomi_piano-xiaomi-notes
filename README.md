@@ -1,31 +1,19 @@
 # Xiaomi Notes for the Xiaomi Pad 8 Pro (piano)
 
-Stock Xiaomi Notes 3.2.2.8 from HyperOS 4 China, made to work without a
-Xiaomi account. Android 17.
+| | |
+| --- | --- |
+| Path | `vendor/xiaomi/piano-xiaomi-notes` |
+| Optional | yes |
+| Version | 3.2.2.8, HyperOS 4 China |
 
-Goes in `vendor/xiaomi/piano-xiaomi-notes`. `notes.mk` rebuilds the APK from the
-stock pieces in `parts/` the first time the product is configured.
+Stock Notes without a Xiaomi account.
 
-## What changes from stock
+| Works | Removed |
+| --- | --- |
+| Handwriting, drawing, local notes | Account, cloud sync, AI |
 
-- Works offline: no Xiaomi account, cloud sync or internet permission.
-- AI features are hidden, since they need Xiaomi's servers.
-- A small extra library replaces Xiaomi framework parts AOSP does not have.
-- Signed with the ROM's normal app key, so it updates like any app.
-
-Handwriting, drawing and local notes stay unchanged.
-
-## Not available
-
-Xiaomi account login, cloud sync and trash, AI text and AI recording.
-
-## Checks
+`notes.mk` rebuilds the APK from `parts/`. A stock-signed Notes must be cleared before updating to this one.
 
 ```sh
-python3 selfcheck.py                 # rebuild from parts and verify
-python3 stage-originals.py --check   # verify the staged APK
-python3 tests/offline_manifest_test.py
+python3 selfcheck.py
 ```
-
-A stock-signed Notes already on the tablet cannot update to this one
-without clearing its data.
